@@ -1,0 +1,75 @@
+<project name="CLX.Satellite build script" default="start">
+    <target name="start" depends="init, asdoc, test, compile, package-apk, package-ipa, finish"/>
+    <property environment="env"/>
+ 
+    <!-- load previously defined configuration properties file: Exchange this file if necessary -->
+    <property file="build.properties" />
+         
+    <ant antfile="build.show-properties.xml" />
+ 
+    <taskdef resource="flexTasks.tasks" classpath="${FLEX.tasks}" />
+    <taskdef resource="flexTasks.tasks" classpath="${FLEX.root}\lib\flexTasks.jar" />
+    <taskdef resource="flexUnitTasks.tasks" classpath="${basedir}\libs\flexUnitTasks-4.1.0.jar" />
+     
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties">
+      <classpath>
+        <pathelement location="D:\app\apache-ant-1.9.3\lib\ant-contrib-1.0b3.jar"/>
+      </classpath>
+    </taskdef>
+ 
+    <property name="FLEX_HOME" value="${FLEX.root}"></property>
+ 
+    <!-- delete and create the target directories again -->
+    <target name="init">
+         
+        <tstamp>
+            <format property="time.start" pattern="yyyy-MM-dd hh:mm:ss aa" />
+        </tstamp>
+ 
+        <echo level="info">BUILD GESTARTET AM ${time.start}</echo>
+        <echo> </echo>
+         
+        <ant antfile="build.init.xml" inheritall="true"/>
+ 
+    </target>
+ 
+    <!-- Compile sources -->
+    <target name="compile">
+        <echo>Compiling...</echo>
+        <echo>============</echo>       
+    </target>
+ 
+    <!-- Unit Tests -->
+    <target name="test" if="${env.run_unittests}">
+        <echo>Testing...</echo>
+        <echo>==========</echo>
+    </target>
+ 
+    <!-- Package APK -->
+    <target name="package-apk" if="${env.package_android}">
+        <echo>Packaging for Android...</echo>
+        <echo>========================</echo>
+    </target>
+     
+    <!-- Package IPA -->
+    <target name="package-ipa" if="${env.package_ios}">
+        <echo>Packaging for iOS...</echo>
+        <echo>====================</echo>           
+    </target>
+ 
+    <!-- Generate ASDOC -->
+    <target name="asdoc" if="${env.create_asdoc}" >
+        <echo>Generating ASDOC...</echo>
+        <echo>===================</echo>
+ 
+    </target>
+ 
+    <!-- Show report -->
+    <target name="finish">
+        <tstamp>
+            <format property="time.end" pattern="yyyy-MM-dd hh:mm:ss aa" />
+        </tstamp>
+        <echo level="info">BUILD BEENDET AT ${time.start}</echo>
+    </target>
+ 
+</project>
