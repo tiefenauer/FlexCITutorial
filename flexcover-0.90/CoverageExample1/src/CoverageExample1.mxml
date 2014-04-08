@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" xmlns:local="*">
+    <mx:Label id="label1" text="Test Label"/>
+    <mx:Label id="label2" text="{label1.text}"/>
+    <mx:Button label="Update variable bar"
+               click="label1.text = 'Updated Test'"/>
+    <local:TestPanel/>
+</mx:Application>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Panel xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" xmlns:local="*"
+    title="Test Panel">
+    <mx:Script>
+        <![CDATA[
+            import mx.controls.Alert;
+            import pkg.TestClass;
+            
+            [Bindable]
+            public var foo:String = "abc";
+
+            private function showAlert():void
+            {
+                Alert.show('foo is def');
+            }
+        ]]>
+    </mx:Script>
+    <mx:Label text="foo is {foo}"/>
+    <mx:Button label="Call TestClass.testFunction()"
+               click="new TestClass().testFunction(1)"/>
+    <mx:Button label="Call TestClass.staticFunction()"
+               click="TestClass.staticFunction()"/>
+    <mx:Button label="Conditionally show an alert"
+               click="if (foo == 'def') showAlert()"/>
+    <mx:Button label="Modify foo"
+               click="foo = 'def'"/>
+</mx:Panel>

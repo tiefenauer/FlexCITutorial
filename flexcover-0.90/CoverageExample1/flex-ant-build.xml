@@ -1,0 +1,12 @@
+<project default="build">
+
+    <property name="APP_ROOT" location="."/>
+
+    <taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar"/>
+
+    <target name="build">
+        <mxmlc file="src/CoverageExample1.mxml"
+               output="bin/CoverageExample1.swf">
+        </mxmlc>
+    </target>
+</project>

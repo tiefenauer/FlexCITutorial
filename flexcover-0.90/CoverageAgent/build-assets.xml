@@ -1,0 +1,6 @@
+<project name="CoverageAgent.assets">
+
+    <dirname property="CoverageAgent.dir" file="${ant.file.CoverageAgent.assets}"/>
+    <property name="CoverageAgent.swc" location="${CoverageAgent.dir}/bin/CoverageAgent.swc"/>
+
+</project>

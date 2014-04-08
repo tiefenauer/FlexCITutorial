@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flexLibProperties version="1">
+<includeClasses>
+<classEntry path="com.allurent.coverage.runtime.AbstractCoverageAgent"/>
+<classEntry path="com.allurent.coverage.runtime.CoverageManager"/>
+<classEntry path="com.allurent.coverage.runtime.ICoverageAgent"/>
+<classEntry path="com.allurent.coverage.runtime.LocalConnectionCoverageAgent"/>
+<classEntry path="com.allurent.coverage.runtime.TraceCoverageAgent"/>
+<classEntry path="coverage"/>
+</includeClasses>
+<includeResources/>
+<namespaceManifests/>
+</flexLibProperties>

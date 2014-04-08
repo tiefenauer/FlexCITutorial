@@ -1,0 +1,88 @@
+Significant Flexcover changes from 0.11 to 0.50
+
+This document summarizes significant changes from release 0.11 to 0.50
+in Flexcover, broken down into their major areas.
+
+
+Branch coverage
+
+Flexcover now calculates both branch coverage (also called "path
+coverage") and line coverage for instrumented programs, and displays
+both types of coverage in the source view.
+
+Branch coverage helps you determine whether every possible conditional
+path through the code been executed, by counting the number of times
+that each condition affecting program flow or expression evaluation
+has yielded true or false.  This is a better metric than line
+coverage, because it can tell you whether you have exercised all the
+different ways a program can execute, not just whether each line of
+the program has run individually.  Branch coverage can even pinpoint
+specific conditional expressions within a line of source.
+
+
+Greatly simplified build/install process
+
+The confusing Ant build framework that used to ship with Flexcover is
+no longer needed.  That framework still exists and is checked into the
+source tree, but is only used by developers on the Flexcover project.
+
+The new approach is simpler: first, you create a custom Flex SDK by
+copying Flexcover's modifications on top of a fresh SDK from Adobe.
+After that, instrumented applications may be built by simply
+configuring your project's current development tools to use this
+custom SDK.  No compiler switches or options are needed, and you can
+use whatever tools you like to build your instrumented applications,
+including Flex Builder.
+
+
+CoverageViewer is now a shrink-wrapped AIR application
+
+The CoverageViewer is no longer launched from Ant: it is now a
+regular, installable AIR application.  It registers itself for the CVM
+and CVR (see below) file types, which makes it very easy to launch by
+double-clicking any instrumented application's .cvm file in Flex
+Builder or on your OS desktop, or any saved coverage report.
+
+
+Source code coverage viewing improvements
+
+The source view now opens in the main CoverageViewer window, which is
+more convenient in most cases.  The source view shows branch coverage
+as well as line coverage, using colored superscript to display inline
+counts for true and false conditions in the source code.
+
+Selecting a class immediately displays the class's source code, while
+selecting a function name will scroll directly to that function within
+its containing class.
+
+A new "quick locator" next to the source view's vertical scroll bar
+makes it easy to see at a glance where the uncovered portions of a
+source file are, and to scroll to those areas immediately.
+
+
+"Uncovered" column in main coverage views
+
+A new column in the main view shows the number of branches or lines
+that have not received any coverage so far.  Sorting by this column is
+a very convenient way to see which parts of your program need the most
+attention.
+
+
+ICoverageAgent interface supports multiple recording approaches
+
+The coverage recording runtime for instrumented applications is no
+longer limited to using LocalConnection to communicate with an
+external application.  Over time this can grow to support multiple
+approaches to recording and multiple data-collecting applications.
+The new ICoverageAgent interface can be implemented by "coverage
+agents" that may do anything they wish with the coverage information
+they receive, while the AbstractCoverageAgent class provides basic
+support for recording, independent of the means used to communicate
+coverage data to an external application.
+
+
+Report files now use .cvr extension
+
+XML coverage reports now use the .cvr suffix, so that they can be
+registered to start up the Coverage Viewer to examine them.
+
