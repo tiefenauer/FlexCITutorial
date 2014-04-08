@@ -1,0 +1,33 @@
+<html>
+
+<!-- Mirrored from opensource.adobe.com/svn/opensource/flexpmd/bin/history/historyFrame.html? by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 08 Apr 2014 09:11:15 GMT -->
+<head>
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+</head>
+<body>
+<script>
+        function processUrl()
+        {
+
+            var pos = url.indexOf("?");
+            url = pos != -1 ? url.substr(pos + 1) : "";
+            if (!parent._ie_firstload) {
+                parent.BrowserHistory.setBrowserURL(url);
+                try {
+                    parent.BrowserHistory.browserURLChange(url);
+                } catch(e) { }
+            } else {
+                parent._ie_firstload = false;
+            }
+        }
+
+        var url = document.location.href;
+        processUrl();
+        document.write(encodeURIComponent(url));
+    </script>
+Hidden frame for Browser History support.
+</body>
+
+<!-- Mirrored from opensource.adobe.com/svn/opensource/flexpmd/bin/history/historyFrame.html? by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 08 Apr 2014 09:11:15 GMT -->
+</html>

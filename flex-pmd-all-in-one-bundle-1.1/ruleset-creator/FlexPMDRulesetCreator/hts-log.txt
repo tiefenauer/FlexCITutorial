@@ -1,0 +1,15 @@
+HTTrack3.47-27+htsswf+htsjava launched on Tue, 08 Apr 2014 11:09:48 at http://opensource.adobe.com/svn/opensource/flexpmd/bin/ +*.png +*.gif +*.jpg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2013], %s -->" -%l "en, *" http://opensource.adobe.com/svn/opensource/flexpmd/bin/ -O1 D:\tools\flex-pmd-all-in-one-bundle-1.1\ruleset-creator\FlexPMDRulesetCreator +*.png +*.gif +*.jpg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+11:11:15	Error: 	"Not Found" (404) at link opensource.adobe.com/svn/opensource/flexpmd/bin/flex-pmd-ruleset-creator-1.2-SNAPSHOT.swf (from opensource.adobe.com/svn/opensource/flexpmd/bin/flex-pmd-ruleset-creator-1.2-SNAPSHOT.html)
+11:11:15	Error: 	"Not Found" (404) at link opensource.adobe.com/svn/opensource/flexpmd/bin/history.js (from opensource.adobe.com/svn/opensource/flexpmd/bin/history/history.js)
+11:11:15	Error: 	"Not Found" (404) at link opensource.adobe.com/svn/opensource/flexpmd/bin/historyFrame.html (from opensource.adobe.com/svn/opensource/flexpmd/bin/history/history.js)
+11:11:25	Warning: 	Warning, link #50 empty
+
+HTTrack Website Copier/3.47-27 mirror complete in 1 minutes 37 seconds : 49 links scanned, 45 files written (2180599 bytes overall) [2197009 bytes received at 22649 bytes/sec]
+(3 errors, 1 warnings, 0 messages)
